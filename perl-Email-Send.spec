@@ -1,7 +1,7 @@
 %define module      Email-Send
 %define name        perl-%{module}
-%define version     2.18.5
-%define up_version  2.185
+%define version     2.19.2
+%define up_version  2.192
 %define release     %mkrel 1
 
 Name:           %{name}
@@ -11,7 +11,7 @@ Summary:        Simply Sending Email
 License:        GPL or Artistic
 Group:          Development/Perl
 URL:            http://search.cpan.org/dist/%{module}
-Source:         http://www.cpan.org/modules/by-module/Email/%{module}-%{up_version}.tar.bz2
+Source:         http://www.cpan.org/modules/by-module/Email/%{module}-%{up_version}.tar.gz
 %if %{mdkversion} < 1010
 BuildRequires:  perl-devel
 %endif
