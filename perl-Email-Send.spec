@@ -20,6 +20,7 @@ BuildRequires:  perl(Email::Simple)
 BuildRequires:  perl(Email::Address)
 BuildRequires:  perl(Module::Pluggable)
 BuildArch:      noarch
+BuildRoot:      %{_tmppath}/%{name}-%{version}
 
 %description
 This module provides a very simple, very clean, very specific interface to
