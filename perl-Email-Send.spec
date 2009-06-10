@@ -1,17 +1,14 @@
-%define module      Email-Send
-%define name        perl-%{module}
-%define up_version  2.194
-%define version     %perl_convert_version %{up_version}
-%define release     %mkrel 1
+%define upstream_name       Email-Send
+%define upstream_version    2.196
 
-Name:           %{name}
-Version:        %{version}
-Release:        %{release}
+Name:           perl-%{upstream_name}
+Version:        %perl_convert_version %{upstream_version}
+Release:        %mkrel 1
 Summary:        Simply Sending Email
 License:        GPL or Artistic
 Group:          Development/Perl
-URL:            http://search.cpan.org/dist/%{module}
-Source:         http://www.cpan.org/modules/by-module/Email/%{module}-%{up_version}.tar.gz
+URL:            http://search.cpan.org/dist/%{upstream_name}
+Source:         http://www.cpan.org/modules/by-module/Email/%{upstream_name}-%{upstream_version}.tar.gz
 BuildRequires:  perl(Return::Value)
 BuildRequires:  perl(Email::Simple)
 BuildRequires:  perl(Email::Address)
@@ -25,7 +22,7 @@ multiple Email mailers. The goal of this software is to be small and simple,
 easy to use, and easy to extend.
 
 %prep
-%setup -q -n %{module}-%{up_version} 
+%setup -q -n %{upstream_name}-%{upstream_version} 
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
