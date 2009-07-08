@@ -1,5 +1,5 @@
 %define upstream_name       Email-Send
-%define upstream_version    2.196
+%define upstream_version    2.197
 
 Name:           perl-%{upstream_name}
 Version:        %perl_convert_version %{upstream_version}
