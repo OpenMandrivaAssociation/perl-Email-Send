@@ -3,18 +3,23 @@
 
 Name:           perl-%{upstream_name}
 Version:        %perl_convert_version %{upstream_version}
-Release:        %mkrel 1
+Release:        %mkrel 2
+
 Summary:        Simply Sending Email
-License:        GPL or Artistic
+License:        GPL+ or Artistic
 Group:          Development/Perl
-URL:            http://search.cpan.org/dist/%{upstream_name}
-Source:         http://www.cpan.org/modules/by-module/Email/%{upstream_name}-%{upstream_version}.tar.gz
-BuildRequires:  perl(Return::Value)
+Url:            http://search.cpan.org/dist/%{upstream_name}
+Source0:        http://www.cpan.org/modules/by-module/Email/%{upstream_name}-%{upstream_version}.tar.gz
+
 BuildRequires:  perl(Email::Simple)
 BuildRequires:  perl(Email::Address)
 BuildRequires:  perl(Module::Pluggable)
+BuildRequires:  perl(Return::Value)
+
 BuildArch:      noarch
 BuildRoot:      %{_tmppath}/%{name}-%{version}
+
+Requires: perl(Email::Date::Format)
 
 %description
 This module provides a very simple, very clean, very specific interface to
@@ -29,7 +34,7 @@ easy to use, and easy to extend.
 %make
 
 %check
-%{__make} test
+%make test
 
 %install
 rm -rf %{buildroot}
@@ -43,5 +48,3 @@ rm -rf %{buildroot}
 %doc README Changes
 %{perl_vendorlib}/Email
 %{_mandir}/*/*
-
-
