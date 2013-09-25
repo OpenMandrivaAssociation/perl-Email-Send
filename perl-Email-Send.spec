@@ -1,17 +1,18 @@
 %define upstream_name       Email-Send
-%define upstream_version    2.198
+%define upstream_version 2.199
 
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version %{upstream_version}
-Release:	3
+Release:	1
 
 Summary:	Simply Sending Email
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{upstream_name}
-Source0:	http://www.cpan.org/modules/by-module/Email/%{upstream_name}-%{upstream_version}.tar.gz
+Source0:	http://www.cpan.org/modules/by-module/Email/Email-Send-%{upstream_version}.tar.gz
 
 BuildRequires:	perl-devel
+BuildRequires: perl(Capture::Tiny)
 BuildRequires:	perl(Email::Simple)
 BuildRequires:	perl(Email::Address)
 BuildRequires:	perl(Module::Pluggable)
@@ -91,4 +92,5 @@ perl Makefile.PL INSTALLDIRS=vendor
 
 * Sat Jan 20 2007 Guillaume Rousse <guillomovitch@mandriva.org> 2.18.3-1mdv2007.1
 - first mdv release
+
 
